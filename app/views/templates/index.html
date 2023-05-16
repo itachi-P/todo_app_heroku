@@ -1,0 +1,17 @@
+<!-- ログイン後のホーム画面 -->
+
+{{ define "content" }}
+ようこそ、<b>{{.Name}}</b> さん！
+<hr>
+<h1>Sample TodoApp</h1>
+
+<p>[<a href="/todos/new">Create</a>]</p>
+<hr>
+
+{{ range .Todos }}
+<div>{{ .Content }}</div>
+<p>[<a href="/todos/edit/{{.ID}}">Edit</a>]</p>
+<p>[<a href="/todos/delete/{{.ID}}">Delete</a>]</p>
+<hr>
+{{end}}<!-- ここまでの間がToDosの全件数分繰り返し表示される -->
+{{end}}

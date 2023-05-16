@@ -1,0 +1,15 @@
+{{define "content"}}
+{{.Content}}
+
+<form role="form" action="/todos/update/{{.ID}}" method="post">
+	<div class="lead">TodosUpdate</div>
+	<div class="form-group">
+		<!-- todo_new.htmlと同じ画面構成だが、textareaの中身にDBから取得したToDoの内容をデフォルト表示 -->
+		<textarea class="form-control" name="content" id="content" placeholder="Todoを更新"
+			rows="4">{{.Content}}</textarea>
+		<br />
+		<br />
+		<button class="btn btn-lg btn-primary pull-right" type="submit">更新</button>
+	</div>
+</form>
+{{end}}
